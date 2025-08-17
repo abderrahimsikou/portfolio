@@ -654,26 +654,47 @@ body::after {
     -webkit-box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 12px 8px 0px 0px #850dd5;
 }
 
-#about .bio{
-    padding: 30px 0 30px 0;
+
+/* الأساسي لجميع الأجهزة */
+#about .bio {
+    padding: 0;
+    margin: 0 0 0.5rem 0;  /* تخفيض المسافة السفلية */
     color: var(--muted-text);
     font-size: 15px;
-    word-spacing: 5px;
+    line-height: 1.4;  /* تحسين تباعد الأسطر */
 }
 
-    @media (max-width: 576px) {
-        .about-portrait{
-            display: flex;
-            padding: 30px 36px 30px 36px;
-        }
-        .about-portrait .pic {
-            width: 90%;
-        }
-        #about .bio{
-            font-size: 14px;
-            padding: 30px 15px 30px 15px;
-        }
+#about .bio + ul {
+    margin: 0.2rem 0 0.8rem 0;  /* تخفيض المسافات */
+    padding-left: 1.2rem;
+}
+
+#about .bio + ul li {
+    margin-bottom: 0.3rem;  /* مسافة بين عناصر القائمة */
+    padding-left: 0.3rem;
+}
+
+/* تعديلات الموبايل فقط */
+@media (max-width: 576px) {
+    .about-portrait {
+        padding: 15px 10px !important;  /* تخفيض كبير للحشو */
     }
+    
+    #about .bio {
+        font-size: 14px;
+        padding: 10px 5px !important;  /* تخفيض الحشو */
+        margin-bottom: 0.3rem !important;
+    }
+    
+    #about .bio + ul {
+        margin: 0.1rem 0 0.5rem 0 !important;
+        padding-left: 1rem;
+    }
+    
+    #about .bio + ul li {
+        margin-bottom: 0.2rem !important;
+    }
+}
 
 /*--------------------------------------------------------------
 # Skills Section
